@@ -1,0 +1,179 @@
+<!doctype html>
+
+
+<html lang="en" class="no-js">
+<head>
+	<title>Expendio Montt - Tacos + Chelas</title>
+
+	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" href="https://barporfirio.com/wp-content/uploads/2021/10/ico.jpg" sizes="32x32">
+	
+	<link rel="stylesheet" href="css/restory-assets.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script src="js/restory-assets.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+</head>
+<body>
+
+	<!-- Container -->
+	<div id="container" style="display:none;">
+		<!-- Header
+		    ================================================== -->
+		<header class="clearfix trans">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container">
+					<div class="inner-navbar">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="/">
+								<img src="https://www.expendio.cl/wp-content/uploads/2021/02/logo-expendio.jpg" alt="Porfirio" width='100px' height="auto" >
+							</a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right navigate-section">
+								<!-- <li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About Us</a></li> -->
+								<li><a class="active" href="menu.html">Menu</a></li>
+								<li><a href="reservation.html">Reservation</a></li>
+<!-- 								<li><a href="blog.html">Blog</a></li>
+								<li><a href="contact.html">Location</a></li> -->
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div>
+				</div><!-- /.container -->
+			</nav>
+		</header>
+		<!-- End Header -->
+
+		<!-- page-banner-section 
+			================================================== -->
+		<section class="page-banner-section menu" style="background-color:black;background-image:url('https://www.expendio.cl/wp-content/uploads/2021/02/logo-expendio.jpg');background-size: 40%;background-position:center;height:60vw;">
+
+		</section>
+		<!-- End page-banner section -->
+
+		<!-- menu-section 
+			================================================== -->
+			<div id="conte"></div>
+		<!-- End menu section -->
+
+		<!-- footer 
+			================================================== -->
+		<footer>
+			<div class="last-line">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>&copy; 2023 Porfirio. All rights reserved.</p>
+						</div>
+						<div class="col-md-6">
+							<ul class="social-icons">
+								<li><a href="#">Facebook</a></li>
+								<li><a href="#">Twitter</a></li>
+								<li><a href="#">Pinteres</a></li>
+								<li><a href="#">Google+</a></li>
+								<li><a href="#">Instagram</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- End footer -->
+
+	</div>
+	<!-- End Container -->
+
+	<!-- Loading -->
+
+	<div id="loading" style="display:flex;align-items:center;justify-content:center;width:100%;height:100vh;">Cargando carta de Expendio Montt ...</div>
+
+	<!-- End Loading -->
+	<script type="text/javascript" async >
+
+		fetch('https://sibaritos.com/restaurant/productosjson/encrip/MTAyMTI=/', {
+			method: 'GET',
+			mode:'cors',
+			dataType: 'json',
+			headers: {
+				'Accept': 'application/json'
+			} 
+		})
+		.then(async response => {
+			
+			let format = await response.json()
+			const ims = document.getElementById('conte')
+
+			let loo = format.sort((a, b) => a.idgrupo - b.idgrupo ).map((n) => {
+				let val = n.productos.length
+				let vals = Math.floor(Math.random() * val)
+				console.log(n)
+		
+				return(`<section class="menu-section ${n.idgrupo % 2 === 0 ? 'left-content' : 'right-content'}">
+						<div class="background-items">
+							<div class="table-back"></div>
+							<div class="image-back images" style="background-position:center;background-size:cover;background-image:url(${n.productos[vals].img === '/images/camara.png' ? `https://source.unsplash.com/random/1280x800?${n.nombre.split(' ').join(',')}` : `https://sibaritos.com/${n.productos[vals].img}`});">
+								${n.productos[vals].img === '/images/camara.png' ? (
+										''
+									):(
+										`<img src="https://sibaritos.com${n.productos[vals].img}" alt="${n.nombre}">`
+								)}
+							</div>
+						</div>
+						<div class="menu-box">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-8 ${n.idgrupo % 2 !== 0 ? 'col-sm-offset-4' : ''}">
+										<div class="titles title-section ${n.idgrupo % 2 === 0 ? 'white-style' : ''}"></div>
+										<ul class="listes menu-list-items">
+											${n.productos.filter(a => a.nombre).map(p => {
+												return(`<li>
+												<div class="list-content">
+													<h2>${p.nombre}</h2>
+													<p>${p.descripcion}</p>
+												</div>
+												<span class="price">$ ${p.precio}</span>
+											</li>`)
+											}).join(' ')}
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						</section>`)
+			});
+			
+			let names = format.sort((a, b) => a.idgrupo - b.idgrupo ).map(n => `<h1>${n.nombre}</h1>`);
+			ims.innerHTML = loo.join(' ');
+			const cont = document.getElementsByClassName('titles')
+
+			for (let i = 0; i < cont.length; i++) {
+				cont[i].innerHTML = names[i];
+			}
+
+		})
+		.then(() => {
+			const container = document.getElementById('container')
+			const loading = document.getElementById('loading')
+			const display = container.style.display = 'block';
+			const remove = loading.style.display = 'none';
+
+		} )
+		.catch(err => console.log(err))
+	
+	</script>
+</body>
+</html>
