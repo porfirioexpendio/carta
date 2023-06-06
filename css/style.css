@@ -367,6 +367,10 @@ a.button-one:hover {
   color: #fff;
   background: #c7ad88; }
 
+a.button-one:is(:last-child){
+  margin-left:20px;
+}
+
 .center-button {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -1770,3 +1774,28 @@ footer {
     width: 50%; }
   #map {
     height: 240px; } }
+
+
+    /*Custom STY*/
+
+    .navigate-section .open .dropdown-toggle{
+      background-color: transparent !important;
+    }
+    .navigate-section .open .dropdown-menu{
+      background-color: #222222;
+      border-bottom: #c7ad88;
+      border-width: 2px;
+      padding: 10px 10px;
+      border-radius: 0;
+    }
+    .navigate-section .open .dropdown-menu li:not(:last-child){
+      margin-bottom: 10px;
+    }
+    .navigate-section .open .dropdown-menu li a{
+      color:#fff;
+      text-transform: uppercase;
+    }
+    .navigate-section .open .dropdown-menu li a:hover{
+      color: #c7ad88;
+      background-color: transparent !important;
+    }
