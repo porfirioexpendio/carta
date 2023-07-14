@@ -146,7 +146,6 @@
 			let loo = format.sort((a, b) => a.idgrupo - b.idgrupo ).filter(t => t.tipo_alimentos === 'PA COMER').map((n) => {
 				let val = n.productos.length
 				let vals = Math.floor(Math.random() * val)
-				console.log(n)
 		
 				return(`<section class="menu-section ${n.idgrupo % 2 === 0 ? 'left-content' : 'right-content'}">
 						<div class="background-items">
