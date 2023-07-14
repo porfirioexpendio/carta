@@ -55,7 +55,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="./" style="padding:15px;margin:0;box-sizing: border-box;">
+							<a class="navbar-brand" href="/porfirio" style="padding:15px;margin:0;box-sizing: border-box;">
 								<img src="../images/logo-porfirio.jpg" alt="Porfirio" width='100px' height="auto" >
 							</a>
 						</div>
@@ -71,14 +71,14 @@
 									</a>
 									<ul class="dropdown-menu" id="subMenu">
 										<li>
-											<a href="./pa-tomar.html">Pa tomar</a>
+											<a href="/porfirio/pa-tomar.html">Pa tomar</a>
 										</li>
 										<li>
-											<a href="./pa-comer.html">Pa comer</a>
+											<a href="/porfirio/pa-comer.html">Pa comer</a>
 										</li>
 									</ul>
 								</li>
-								<li><a href="./reserva.html">Reserva</a></li>
+								<li><a href="/porfirio/reserva.html">Reserva</a></li>
 
 							</ul>
 						</div>
@@ -194,15 +194,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
-							<p>&copy; 2017 restory. All rights reserved. Template by Nunforest.</p>
+							<p>&copy; 2023 Porfirio.Todos los derechos reservados.</p>
 						</div>
 						<div class="col-md-6">
 							<ul class="social-icons">
-								<li><a href="#">Facebook</a></li>
-								<li><a href="#">Twitter</a></li>
-								<li><a href="#">Pinteres</a></li>
-								<li><a href="#">Google+</a></li>
-								<li><a href="#">Instagram</a></li>
+								<li><a href="https://www.facebook.com/BarPorfirio/" target="'_blank">Facebook</a></li>
+								<li><a href="https://www.instagram.com/barporfirio/" target="'_blank">Instagram</a></li>
+								<li><a href="https://linktr.ee/barporfirio/" target="'_blank">Linktree</a></li>
 							</ul>
 						</div>
 					</div>
@@ -318,7 +316,7 @@
             }, [])
 
             const list = document.querySelector('#subMenu')
-            let items = test.map(i => `<li><a href="./${i.toLowerCase().replace(" ", "-")}.html">${i}</a></li>`)
+            let items = test.map(i => `<li><a href="/porfirio/${i.toLowerCase().replace(" ", "-")}.html">${i}</a></li>`)
 
             list.innerHTML = items.join(' ')
 

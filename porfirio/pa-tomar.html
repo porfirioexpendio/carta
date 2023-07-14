@@ -103,15 +103,13 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
-							<p>&copy; 2023 Porfirio. All rights reserved.</p>
+							<p>&copy; 2023 Porfirio.Todos los derechos reservados.</p>
 						</div>
 						<div class="col-md-6">
 							<ul class="social-icons">
-								<li><a href="#">Facebook</a></li>
-								<li><a href="#">Twitter</a></li>
-								<li><a href="#">Pinteres</a></li>
-								<li><a href="#">Google+</a></li>
-								<li><a href="#">Instagram</a></li>
+								<li><a href="https://www.facebook.com/BarPorfirio/" target="'_blank">Facebook</a></li>
+								<li><a href="https://www.instagram.com/barporfirio/" target="'_blank">Instagram</a></li>
+								<li><a href="https://linktr.ee/barporfirio" target="'_blank">Linktree</a></li>
 							</ul>
 						</div>
 					</div>
@@ -200,7 +198,7 @@
 			}, [])
 
 			const list = document.querySelector('#subMenu')
-			let items = test.map(i => `<li><a href="./${i.toLowerCase().replace(" ", "-")}.html">${i}</a></li>`)
+			let items = test.map(i => `<li><a href="/porfirio/${i.toLowerCase().replace(" ", "-")}.html">${i}</a></li>`)
 
 			list.innerHTML = items.join(' ')
 		})
