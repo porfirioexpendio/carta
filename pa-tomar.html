@@ -9,7 +9,7 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="icon" href="./images/ico.jpg" sizes="32x32">
+	<link rel="icon" href="images/ico-expendio.jpg" sizes="32x32">
 	
 	<link rel="stylesheet" href="css/restory-assets.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -17,7 +17,7 @@
 	<script src="js/restory-assets.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 
-	<style>
+    <style>
         @media (max-width:767px){
             .navbar-header{
                 width:100%;
@@ -31,12 +31,11 @@
             }
         }
     </style>
-	
 </head>
 <body>
 
 	<!-- Container -->
-	<div id="container" style="display:none;">
+	<div id="container">
 		<!-- Header
 		    ================================================== -->
 		<header class="clearfix trans">
@@ -51,8 +50,8 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="./">
-								<img src="./images/logo-expendio.jpg" alt="Expendio" width='100px' height="auto" >
+							<a class="navbar-brand" href="/" style="padding:15px;margin:0;box-sizing: border-box;">
+								<img src="./images/logo-expendio.jpg" alt="Porfirio" width='100px' height="auto" >
 							</a>
 						</div>
 
@@ -67,17 +66,18 @@
 									</a>
 									<ul class="dropdown-menu" id="subMenu">
 										<li>
-											<a href="/pa-tomar">Pa tomar</a>
+											<a href="/pa-tomar.html">Pa tomar</a>
 										</li>
 										<li>
-											<a href="/pa-comer">Pa comer</a>
+											<a href="/pa-comer.html">Pa comer</a>
 										</li>
 									</ul>
 								</li>
-								<li><a href="reservation.html">Reservation</a></li>
+								<li><a href="reserva.html">Reserva</a></li>
 
 							</ul>
-						</div><!-- /.navbar-collapse -->
+						</div>
+						<!-- /.navbar-collapse -->
 					</div>
 				</div><!-- /.container -->
 			</nav>
@@ -86,7 +86,7 @@
 
 		<!-- page-banner-section 
 			================================================== -->
-		<section class="page-banner-section menu" style="background-color:black;background-image:url('./images/logo-expendio.jpg');background-size: 40%;background-position:center;height:60vw;">
+		<section class="page-banner-section menu" style="background-color:black;background-image:url('./upload/others/pa-tomar.jpg');background-size: cover;background-position:center;height:60vw;">
 
 		</section>
 		<!-- End page-banner section -->
@@ -125,7 +125,7 @@
 
 	<!-- Loading -->
 
-	<div id="loading" style="display:flex;align-items:center;justify-content:center;width:100%;height:100vh;">Cargando carta de Expendio Montt ...</div>
+	<div id="loading" style="position:fixed;top:0;left:0;display:flex;align-items:center;justify-content:center;width:100%;height:100vh;">Cargando carta de Expendio Montt ...</div>
 
 	<!-- End Loading -->
 	<script type="text/javascript" async >
@@ -146,8 +146,7 @@
 			let loo = format.sort((a, b) => a.idgrupo - b.idgrupo ).filter(t => t.tipo_alimentos === 'PA TOMAR').map((n) => {
 				let val = n.productos.length
 				let vals = Math.floor(Math.random() * val)
-				console.log(n)
-		
+		console.log(n)
 				return(`<section class="menu-section ${n.idgrupo % 2 === 0 ? 'left-content' : 'right-content'}">
 						<div class="background-items">
 							<div class="table-back"></div>
@@ -204,7 +203,6 @@
 			let items = test.map(i => `<li><a href="./${i.toLowerCase().replace(" ", "-")}.html">${i}</a></li>`)
 
 			list.innerHTML = items.join(' ')
-			console.log(test)
 		})
 		.then(() => {
 			const container = document.getElementById('container')

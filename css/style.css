@@ -482,7 +482,7 @@ section.page-banner-section.reservation {
   /*
      * Set a base background for 1x environments.
      */
-  background: #000 url("../upload/banners/ban3.jpg") center center no-repeat;
+  background: #000 url("../upload/others/reservas.jpg") center center no-repeat;
   background-size: cover;
   /*
      * Create an @2x-ish media query.
@@ -497,11 +497,11 @@ section.page-banner-section.reservation {
    */ }
   @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
     section.page-banner-section.reservation {
-      background: #000 url("../upload/banners/ban3@2x.jpg") center center no-repeat;
+      background: #000 url("../upload/others/reservas.jpg") center center no-repeat;
       background-size: cover; } }
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     section.page-banner-section.reservation {
-      background: #000 url("../upload/banners/ban3@2x.jpg") center center no-repeat;
+      background: #000 url("../upload/others/reservas.jpg") center center no-repeat;
       background-size: cover; } }
 
 section.page-banner-section.blog {
@@ -890,7 +890,7 @@ section.menu-section.right-content .background-items {
 /* =  Reservation banner section
  *------------------------------------------------- */
 section.reservation-banner-section {
-  padding: 20px 0;
+  /*padding: 20px 0;*/
   /*
    * Set a counter and get the length of the image path.
    */
@@ -907,7 +907,7 @@ section.reservation-banner-section {
   /*
      * Set a base background for 1x environments.
      */
-  background: #000 url("../upload/banners/ban1.jpg") center center no-repeat;
+  background: #000 url("../upload/others/reserva-por.jpg") center center no-repeat;
   background-size: cover;
   /*
      * Create an @2x-ish media query.
@@ -920,16 +920,16 @@ section.reservation-banner-section {
    * If anything went wrong trying to separate the file from its
    * extension, set a background value without doing anything to it.
    */
-  height: 800px;
+  /*height: 800px;*/
   display: flex;
   align-items: center; }
   @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
     section.reservation-banner-section {
-      background: #000 url("../upload/banners/ban1@2x.jpg") center center no-repeat;
+      background: #000 url("../upload/others/reserva-por.jpg") center center no-repeat;
       background-size: cover; } }
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     section.reservation-banner-section {
-      background: #000 url("../upload/banners/ban1@2x.jpg") center center no-repeat;
+      background: #000 url("../upload/others/reserva-por.jpg") center center no-repeat;
       background-size: cover; } }
   section.reservation-banner-section .container {
     text-align: center; }
