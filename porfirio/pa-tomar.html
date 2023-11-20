@@ -163,11 +163,11 @@
 				return(`<section class="menu-section ${n.idgrupo % 2 === 0 ? 'left-content' : 'right-content'}">
 						<div class="background-items">
 							<div class="table-back"></div>
-							<div class="image-back images" style="background-position:center;background-size:cover;background-image:url(${n.img_grupo === '' ? `https://source.unsplash.com/random/1280x800?${n.nombre.split(' ').join(',')}` : `https://sibaritos.com${n.img_grupo}`});">
+							<div class="image-back images" style="background-position:center;background-size:cover;background-image:url(${n.img_grupo === '' ? `https://source.unsplash.com/random/1280x800?${n.nombre.split(' ').join(',')}` : `https://sibaritos.com/${n.img_grupo}`});">
 								${n.productos[vals].img === '/images/camara.png' ? (
 										''
 									):(
-										`<img src="https://sibaritos.com${n.img_grupo}" alt="${n.nombre}">`
+										`<img src="https://sibaritos.com/${n.img_grupo}" alt="${n.nombre}">`
 								)}
 							</div>
 						</div>
